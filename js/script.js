@@ -26,6 +26,20 @@ submitBtn.addEventListener('click', function () {
     userDiscount = userDiscount.value;
     console.log('Variabile con lo sconto: ', userDiscount);
 
+    const ticketUsername = document.getElementById('ticket-username');
+
+    const ticketSale = document.getElementById('ticket-sale');
+
+    const ticketTrain = document.getElementById('ticket-train');
+
+
+    const ticketCp = document.getElementById('ticket-cp');
+
+
+    const ticketPrice = document.getElementById('ticket-price');
+
+
+
     // SE è presente il nome
     if (userName != '') {
         //- SE i km sono presenti e sono un numero
@@ -38,6 +52,21 @@ submitBtn.addEventListener('click', function () {
             //- Arrotonda prezzo a 2 decimal
             price = parseFloat(price.toFixed(2));
             console.log('Prezzo del biglietto: ', price);
+
+            ticketUsername.innerHTML = userName;
+
+            if (userDiscount == 0) {
+                ticketSale.innerHTML = 'Biglietto Standard';
+            } else {
+                ticketSale.innerHTML = 'Biglietto Ridotto';
+            }
+
+            ticketTrain.innerHTML = Math.floor(Math.random() * 10 + 1);
+
+            ticketCp.innerHTML = Math.floor(Math.random() * 100000 + 1);
+
+            ticketPrice.innerHTML = price + '&euro;';
+
             //- ALTRIMENTI dai errore
         } else {
             alert("Inserisci correttamente il numero di kilometri che vuoi percorrere");
