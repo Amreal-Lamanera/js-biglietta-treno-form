@@ -18,8 +18,70 @@
 
     </head>
 
-    <body class="debug">
-        <h1>Hello, world!</h1>
+    <body class="debug my_bg-red">
+
+        <main class="my-main">
+            <section class="main-header">
+
+                <h1 class="text-uppercase text-white py-4 text-center">
+                    Calcola il prezzo del tuo biglietto
+                </h1>
+
+                <div class="container-lg text-center justify-content-center bg-white my_rounded shadow">
+                    <form action="#" method="get">
+
+
+                        <div class="row gx-5">
+
+                            <div class="col-4 pt-4 pb-5">
+                                <h4 class="my_color-red pb-3">
+                                    Nome Cognome
+                                </h4>
+                                <input type="text" name="userName" placeholder="Nome e Cognome"
+                                    class="my_input my_rounded-small">
+                            </div>
+
+                            <div class="col-4 pt-4 pb-5">
+                                <h4 class="my_color-red pb-3">
+                                    Km da percorrere
+                                </h4>
+                                <input type="text" name="userKm" placeholder="Numero di Km"
+                                    class="my_input my_rounded-small">
+                            </div>
+
+                            <div class="col-4 pt-4 pb-5">
+                                <h4 class="my_color-red pb-3">
+                                    Fascia d'età
+                                </h4>
+                                <select name="userAge" class="my_input my_rounded-small">
+
+                                    <option value="1">
+                                        Maggiorenne
+                                    </option>
+
+                                    <option value="0.2">
+                                        Minorenne
+                                    </option>
+
+                                    <option value="0.4">
+                                        Più di 65 anni
+                                    </option>
+
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="buttons-container pb-4">
+                            <input type="submit" value="Genera"
+                                class="border-0 my_bg-grey my_color-red fw-bold my_rounded-small">
+                            <button type="reset"
+                                class="border-0 my_bg-grey my_color-red fw-bold my_rounded-small">Annulla</button>
+                        </div>
+                    </form>
+                </div>
+
+            </section>
+        </main>
 
         <!-- Optional JavaScript; choose one of the two! -->
 

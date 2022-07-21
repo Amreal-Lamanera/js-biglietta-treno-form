@@ -1,7 +1,38 @@
 /*********************
+    UTILITY
+*********************/
+:root {
+    --red: #b91450;
+}
+
+.my_bg-red {
+    background-color: var(--red);
+}
+
+.my_color-red {
+    color: var(--red);
+}
+
+.my_rounded {
+    border-radius: 0.75rem;
+}
+
+.my_rounded-small {
+    border-radius: 0.5rem;
+}
+
+.my_input {
+    border-color: var(--red);
+}
+
+.my_bg-grey {
+    background-color: lightgray;
+}
+
+/*********************
     DEBUG
 *********************/
 
-.debug h1 {
+/* .debug h1 {
     color: red;
-}
+} */
