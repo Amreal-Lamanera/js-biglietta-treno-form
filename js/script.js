@@ -28,49 +28,46 @@ submitBtn.addEventListener('click', function () {
 
     //Recupero valore Info
     const userNameValue = userName.value;
-    // console.log('Variabile con lo username: ', userName);
+    // console.log('Variabile con lo username: ', userNameValue);
 
     const userKmValue = parseFloat(userKm.value);
-    // console.log('Variabile con i km necessari: ', userKm);
+    // console.log('Variabile con i km necessari: ', userKmValue);
 
-    const userDiscountValue = parseFloat(userDiscount.value);
-    //console.log('Variabile con lo sconto: ', userDiscount);
+    let userDiscountValue = parseFloat(userDiscount.value);
+    //console.log('Variabile con lo sconto: ', userDiscountValue);
 
     // SE è presente il nome
     if (userNameValue != '') {
         //- SE i km sono presenti e sono un numero
         if (userKmValue != '' && !isNaN(userKmValue) && userKmValue > 0) {
             //Controllo male intenzionati
-            if (userDiscountValue == 0 || userDiscountValue == 0.2 || userDiscountValue == 0.4) {
-                //- Calcola il prezzo del biglietto
-                price = 0.21 * userKmValue;
-                //- SE l'utente è minorenne (userAge < 18anni) applica uno sconto del 20%
-                //- SE l'utente ha più di 65 anni (userAge > 65anni) applica uno sconto del 40%
-                price -= price * userDiscountValue;
-                //- Arrotonda prezzo a 2 decimal
-                const textPrice = price.toFixed(2);
-                // console.log('Prezzo del biglietto: ', textPrice);
-
-                ticketUsername.innerHTML = userNameValue;
-
-                if (userDiscountValue == 0) {
-                    ticketSale.innerHTML = 'Biglietto Standard';
-                } else {
-                    ticketSale.innerHTML = 'Biglietto Ridotto';
-                }
-
-                ticketTrain.innerHTML = Math.floor(Math.random() * 10 + 1);
-
-                ticketCp.innerHTML = Math.floor(Math.random() * 100000 + 1);
-
-                ticketPrice.innerHTML = textPrice + '&euro;';
-
+            if (userDiscountValue != 0 && userDiscountValue != 0.2 && userDiscountValue != 0.4) {
+                userDiscountValue = 0;
             }
-            //- ALTRIMENTI dai errore
-            else {
-                alert("Qualcosa è andato storto... ricarica la pagina per riprovare.");
+            //- Calcola il prezzo del biglietto
+            price = 0.21 * userKmValue;
+            //- SE l'utente è minorenne (userAge < 18anni) applica uno sconto del 20%
+            //- SE l'utente ha più di 65 anni (userAge > 65anni) applica uno sconto del 40%
+            price -= price * userDiscountValue;
+            //- Arrotonda prezzo a 2 decimal
+            const textPrice = price.toFixed(2);
+            // console.log('Prezzo del biglietto: ', textPrice);
+
+            ticketUsername.innerHTML = userNameValue;
+
+            if (userDiscountValue == 0) {
+                ticketSale.innerHTML = 'Biglietto Standard';
+            } else {
+                ticketSale.innerHTML = 'Biglietto Ridotto';
             }
-        } else {
+
+            ticketTrain.innerHTML = Math.floor(Math.random() * 10 + 1);
+
+            ticketCp.innerHTML = Math.floor(Math.random() * 100000 + 1);
+
+            ticketPrice.innerHTML = textPrice + '&euro;';
+        } //- ALTRIMENTI dai errore
+        else {
             alert("Inserisci correttamente il numero di kilometri che vuoi percorrere");
             // console.log(userKm);
 
