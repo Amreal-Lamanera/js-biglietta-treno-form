@@ -23,8 +23,8 @@ submitBtn.addEventListener('click', function () {
     // console.log('Variabile con i km necessari: ', userKm);
 
     let userDiscount = document.querySelector('select[name="userDiscount"]');
-    userDiscount = userDiscount.value;
-    // console.log('Variabile con lo sconto: ', userDiscount);
+    userDiscount = parseFloat(userDiscount.value);
+    console.log('Variabile con lo sconto: ', userDiscount);
 
     const ticketUsername = document.getElementById('ticket-username');
 
